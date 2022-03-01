@@ -1,0 +1,10 @@
+option{
+    background: #212529 !important;
+    color:#f8f9fa !important;
+}
+.deleteBtn{
+    background-color: transparent !important;
+    width: 10px !important;
+    height: 15px !important;
+    color: #ffffff !important;
+}
