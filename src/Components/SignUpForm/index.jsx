@@ -80,7 +80,7 @@ const SignUpForm = () => {
             lineHeight={["17.59px"]}>Rápido e grátis, vamos nessa</Text>
             <form onSubmit={handleSubmit(handleSignIn)}>
                 {/* ===========================================================================================================*/}
-                <Box name="name">
+                <Box name="name" >
                     <Text 
                     variant="headLineItalic" 
                     color="#f8f9fa"
@@ -88,22 +88,23 @@ const SignUpForm = () => {
                     marginTop= {["2px","8px"]}>Nome</Text>
                     <Input 
                     {...register("name")}
-                    placeholder="Digite aqui seu nome"
+                    placeholder="Digite aqui seu name"
                     bg= "#343b41"
                     h= {["38.38","48px"]}
                     w= "264.66px"
+                    bg= {errors.name?"#e83f5b":"#343b41"}
+                    color= {errors.name?"#212529":"#868E96"}
                     flexDir= "row"
                     alignItems= "center"
                     padding= "0px 16.2426px"
                     border= "none"
                     borderRadius= "4px"
-                    marginTop= {["0px","10px"]}
+                    marginTop= {["3px","10px"]}
                     _focus= {{
                         border: "1.2182px solid #F8F9FA",
                         color: "#ffffff",
                         }
                     }/>
-                    <Text variant="headLineItalic">{errors.name?.message}</Text>
                 </Box>
                 {/* ===========================================================================================================*/}
                 <Box name="email" >
@@ -118,6 +119,8 @@ const SignUpForm = () => {
                     bg= "#343b41"
                     h= {["38.38","48px"]}
                     w= "264.66px"
+                    bg= {errors.email?"#e83f5b":"#343b41"}
+                    color= {errors.email?"#212529":"#868E96"}
                     flexDir= "row"
                     alignItems= "center"
                     padding= "0px 16.2426px"
@@ -129,7 +132,6 @@ const SignUpForm = () => {
                         color: "#ffffff",
                         }
                     }/>
-                    <Text variant="headLineItalic">{errors.email?.message}</Text>
                 </Box>
                 {/* ===========================================================================================================*/}
                 <Box name="password" w= "264.66px">
@@ -142,7 +144,8 @@ const SignUpForm = () => {
                     {...register("password")}
                     type="password"
                     placeholder="Digite aqui sua senha"
-                    bg= "#343b41"
+                    bg= {errors.email?"#e83f5b":"#343b41"}
+                    color= {errors.email?"#212529":"#868E96"}
                     h= {["38.38","48px"]}
                     w= "264.66px"
                     flexDir= "row"
@@ -156,7 +159,6 @@ const SignUpForm = () => {
                         color: "#ffffff",
                         }
                     }/>
-                    <Text variant="headLineItalic">{errors.password?.message}</Text>
                 </Box>
                 {/* ===========================================================================================================*/}
                 <Box name="confirm_password">
@@ -169,7 +171,8 @@ const SignUpForm = () => {
                     {...register("confirm_password")}
                     type="password"
                     placeholder="Confirme sua senha"
-                    bg= "#343b41"
+                    bg= {errors.email?"#e83f5b":"#343b41"}
+                    color= {errors.email?"#212529":"#868E96"}
                     h= {["38.38","48px"]}
                     w= "264.66px"
                     flexDir= "row"
@@ -183,7 +186,6 @@ const SignUpForm = () => {
                         color: "#ffffff",
                         }
                     }/>
-                    <Text variant="headLineItalic">{errors.confirm_password?.message}</Text>
                 </Box>
                 {/* ===========================================================================================================*/}
                 <Box name="contact">
@@ -195,7 +197,8 @@ const SignUpForm = () => {
                     <Input 
                     {...register("contact")}
                     placeholder="LinkedIn"
-                    bg= "#343b41"
+                    bg= {errors.email?"#e83f5b":"#343b41"}
+                    color= {errors.email?"#212529":"#868E96"}
                     h= {["38.38","48px"]}
                     w= "264.66px"
                     flexDir= "row"
@@ -209,7 +212,6 @@ const SignUpForm = () => {
                         color: "#ffffff",
                         }
                     }/>
-                    <Text variant="headLineItalic">{errors.contact?.message}</Text>
                 </Box>
                 {/* ===========================================================================================================*/}
                 <Box name="module">
@@ -243,7 +245,6 @@ const SignUpForm = () => {
                         <option>Quinto módulo</option>
                         <option>Sexto módulo</option>
                     </Select>
-                    <Text variant="headLineItalic">{errors.module?.message}</Text>
                 </Box>
                 {/* ===========================================================================================================*/}
                 <Button type="submit" variant="primary" w="264.66px" marginTop= "30px">Entrar</Button>
