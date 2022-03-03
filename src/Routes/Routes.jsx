@@ -2,10 +2,17 @@ import { Switch,Route } from "react-router-dom";
 import Dashboard from "../Pages/Dashboard";
 import LoginPage from "../Pages/LoginPage";
 import SignUpPage from "../Pages/SignUpPage";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 const Routes = () => {
     const [ authentication,setAuthentication ] = useState(false);
+
+    useEffect(() => {
+        const token = JSON.parse(localStorage.getItem("@kenzieHub:token"));
+        if (token) {
+          return setAuthentication(true);
+        }
+    }, [authentication]);
     
     return (
         <>
